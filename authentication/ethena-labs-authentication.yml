@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/api-documentation/overview
+docs: https://docs.ethena.fi/api-documentation/overview
+summary:
+  types: [ip-allowlist, wallet-allowlist, signature]
+  notes: >-
+    The Ethena Minting API does not use API keys or bearer tokens. Access is gated at two layers:
+    network-level IP whitelisting and onchain wallet-address whitelisting (benefactor / beneficiary).
+    Order submission is authenticated by a cryptographic signature over the EIP-712 typed order
+    payload, so authority derives from control of the whitelisted wallet's private key rather than a
+    shared secret.
+schemes:
+- name: ip-allowlist
+  type: network
+  description: >-
+    Callers must have their IP address whitelisted by Ethena. The private endpoint
+    (https://private.api.ethena.fi) requires IP whitelisting; the public endpoint
+    (https://public.api.ethena.fi) is reachable but only whitelisted wallets can transact.
+- name: wallet-allowlist
+  type: onchain-identity
+  description: >-
+    The benefactor (and, where different, beneficiary) Ethereum wallet address must be whitelisted
+    onchain by Ethena. Non-whitelisted addresses are rejected (error codes 10, 25, 26).
+- name: eip712-signature
+  type: signature
+  scheme: EIP-712
+  description: >-
+    Default order authentication. The caller signs the typed order object (order_id, order type,
+    expiry, nonce, benefactor/beneficiary, collateral asset + amount, USDe amount) and submits the
+    hex signature on the POST /order request. Nonces prevent replay (error 24 on duplicate nonce).
+- name: eip1271-signature
+  type: signature
+  scheme: EIP-1271
+  description: >-
+    Alternative signature type for smart-contract wallets. Supplied by appending
+    signature_type=EIP1271 to the POST /order request.
