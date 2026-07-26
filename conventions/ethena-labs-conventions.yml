@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/api-documentation/overview
+description: >-
+  Cross-cutting request/response semantics for the Ethena Minting API, captured from the published
+  documentation. The API is a request-for-quote (RFQ) mint/redeem interface with strong replay
+  protection rather than a CRUD resource API.
+authentication:
+  style: onchain-signature
+  ref: authentication/ethena-labs-authentication.yml
+  detail: IP + wallet allowlist; EIP-712 (default) / EIP-1271 signed orders.
+idempotency:
+  supported: true
+  mechanism: single-use-rfq + signed-nonce
+  detail: >-
+    Each RFQ ID is single-use: a quote can be consumed by exactly one successfully executed order.
+    Re-submitting an already-used RFQ is rejected with error 37 (HTTP 409, "This RFQ has already
+    been used to execute an order"). Orders additionally carry a nonce in the EIP-712 signed body;
+    a duplicate nonce is rejected (error 24), and an in-flight execution returns error 21
+    ("Execution request already being processed") or error 22 ("Already successfully executed this
+    block"). Together the single-use RFQ + signed nonce give replay-safe, at-most-once order
+    execution semantics.
+  header: null
+  retention: quote valid 15 minutes; RFQ single-use
+pagination:
+  supported: false
+  detail: The documented endpoints are point queries (availability, quote, fees, order status); no
+    collection listing / pagination is documented.
+error_envelope:
+  style: numeric-code
+  fields: [code, message]
+  ref: errors/ethena-labs-error-codes.yml
+  detail: Structured error object with a numeric code (0-37) and message; HTTP status varies (400,
+    404, 409, 429, 202). Not RFC 9457 problem+json.
+rate_limiting:
+  supported: true
+  detail: Per-benefactor throttle limit enforced; exceeding it returns error 28 (HTTP 429,
+    "Benefactor has reached throttle limit."). Capacity is also constrained per block (errors 9, 17).
+  headers: null
+versioning:
+  scheme: contract-version
+  current: v2
+  detail: >-
+    The minting surface is versioned by the underlying Mint & Redeem smart contract. The V1->V2
+    upgrade (2024-07-08) changed the base host from api.ethena.fi to public/private.api.ethena.fi
+    and moved rfq_id into the signed body as order_id. See changelog/ethena-labs-changelog.yml.
+  ref: lifecycle/ethena-labs-lifecycle.yml
+request_tracing:
+  request_id_field: order_id
+  detail: order_id (the RFQ ID, RFQ- prefix optional, case-insensitive) is the correlation handle
+    used by GET /order-confirmation to poll execution status.

@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/api-documentation/overview
+description: >-
+  Cross-cutting standards conformance for the Ethena Minting API, asserted from the published
+  documentation. Ethena's authentication model is Ethereum signature standards rather than
+  web-API OAuth/OIDC.
+standards:
+- id: eip-712
+  name: EIP-712 Typed structured data hashing and signing
+  conforms: true
+  evidence: Orders are signed as EIP-712 typed data (default signature_type) before submission.
+- id: eip-1271
+  name: EIP-1271 Standard signature validation for contracts
+  conforms: true
+  evidence: signature_type=EIP1271 supported for smart-contract wallet order authentication.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: No OAuth flows; access is IP + wallet allowlist with signed orders.
+- id: oidc
+  name: OpenID Connect
+  conforms: false
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: false
+  evidence: Errors use a numeric code + message envelope, not application/problem+json.
+- id: rfc8594-sunset
+  name: RFC 8594 Sunset header
+  conforms: false
+  evidence: No Sunset/Deprecation headers documented; versioning is by smart-contract upgrade.
+- id: idempotency
+  name: Idempotent / replay-safe writes
+  conforms: true
+  evidence: Single-use RFQ + signed nonce give at-most-once order execution (errors 24, 37).

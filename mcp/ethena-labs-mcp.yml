@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://docs.ethena.fi/api-documentation/overview
+description: >-
+  Candidate MCP tool surface derived from the documented Ethena Minting API operations. Ethena does
+  not publish an official hosted/remote MCP server; this is a starting point for one, one tool per
+  documented endpoint. Not a provider claim.
+server:
+  name: ethena-minting
+  transport: http
+  url: null
+tools:
+- name: get_asset_availability
+  description: List supported mint/redeem trading pairs (e.g. USDT/USDe, USDC/USDe).
+  source_operation: GET https://public.api.ethena.fi/asset-availability
+- name: get_rfq
+  description: Request a firm 15-minute quote for a mint or redeem, given pair, side, size, benefactor.
+  source_operation: GET https://public.api.ethena.fi/rfq
+- name: get_fees
+  description: Return the fee schedule (basis points per token) for a benefactor address.
+  source_operation: GET https://public.api.ethena.fi/fees
+- name: submit_order
+  description: Submit an EIP-712 / EIP-1271 signed order built from a single-use RFQ.
+  source_operation: POST https://public.api.ethena.fi/order
+- name: get_order_confirmation
+  description: Poll execution status of a submitted order by order_id (RFQ ID).
+  source_operation: GET https://public.api.ethena.fi/order-confirmation

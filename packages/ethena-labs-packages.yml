@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/ethena-labs/ethena-minting-client
+description: >-
+  First-party client SDKs for the Ethena Minting API. Ethena ships the SDKs as source in the
+  ethena-minting-client monorepo (Python /py, TypeScript /ts, plus a React example UI /ui) rather
+  than as published npm / PyPI packages, so install is from the GitHub repository. Additional
+  first-party clients exist for related tokens (USDM, suiUSDe, USDtb).
+packages:
+- language: typescript
+  registry: github
+  name: ethena-minting-client (ts)
+  url: https://github.com/ethena-labs/ethena-minting-client/tree/main/ts
+  install: git clone https://github.com/ethena-labs/ethena-minting-client
+  official: true
+  published_to_registry: false
+  notes: Type-safe TypeScript SDK for minting and redeeming USDe.
+- language: python
+  registry: github
+  name: ethena-minting-client (py)
+  url: https://github.com/ethena-labs/ethena-minting-client/tree/main/py
+  install: git clone https://github.com/ethena-labs/ethena-minting-client
+  official: true
+  published_to_registry: false
+  notes: Python SDK for minting and redeeming USDe.
+- language: typescript
+  registry: github
+  name: suiusde-sdk
+  url: https://github.com/ethena-labs/suiusde-sdk
+  install: git clone https://github.com/ethena-labs/suiusde-sdk
+  official: true
+  published_to_registry: false
+  notes: SDK for interacting with suiUSDe (USDe on Sui).
+- language: python
+  registry: github
+  name: usdm-minting-client
+  url: https://github.com/ethena-labs/usdm-minting-client
+  install: git clone https://github.com/ethena-labs/usdm-minting-client
+  official: true
+  published_to_registry: false
+  notes: Minting client for the USDM token.

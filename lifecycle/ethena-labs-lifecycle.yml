@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/api-documentation/overview
+versioning:
+  scheme: contract-version
+  current: v2
+  docs: https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2
+  detail: >-
+    The minting API is versioned by the underlying Mint & Redeem smart contract. Contract V2 went
+    live 2024-07-08 ~10:00 UTC and constituted a breaking change to whitelisted trading systems.
+deprecation:
+  policy_url: https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2
+  sunset_header: false
+  detail: >-
+    No formal machine-readable deprecation policy (RFC 8594 Sunset/Deprecation headers) is
+    documented. Deprecations are communicated as breaking contract upgrades: the V1->V2 migration
+    retired the legacy https://api.ethena.fi host in favor of public/private.api.ethena.fi and
+    removed the rfq_id query parameter (now order_id inside the signed body).
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.ethena.fi/
+status_page_services:
+- ethena.fi
+- app.ethena.fi
+- api2.ethena.fi
+deprecated_operations: []

@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: probed
+description: >-
+  Probe of the /.well-known/ discovery surface for Ethena hosts. No discovery documents are
+  published; all probed paths returned 404 / 403. Recorded as valid negative data.
+hosts:
+- host: https://ethena.fi
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://docs.ethena.fi
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://public.api.ethena.fi
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    note: API host blocks non-whitelisted IPs (403 on all paths).

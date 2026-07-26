@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-contract-v2
+scheme: contract-version
+current_version: v2
+detail: >-
+  Ethena does not publish a dated API changelog feed; API evolution is tracked through the versioned
+  Mint & Redeem smart contract and its migration notes. The recent window below is captured from the
+  Mint and Redeem Contract V2 documentation.
+entries:
+- version: v2
+  date: '2024-07-08'
+  breaking: true
+  contract: '0xe3490297a08d6fC8Da46Edb7B6142E4F461b62D3'
+  highlights:
+  - Mint & Redeem Contract upgraded from V1 to V2 at ~10:00 UTC (breaking change for whitelisted
+    trading systems).
+  - Base API host changed from https://api.ethena.fi to https://public.api.ethena.fi or
+    https://private.api.ethena.fi (whitelisted-IP only).
+  - rfq_id removed from the POST /order query parameters; it must instead be included inside the
+    signed order body as order_id.
+  - Security hardening, reduced risk surfaces, new user-requested workflow support, and additional
+    controls around risk configurations.
+- version: v1
+  date: '2023-10'
+  breaking: false
+  contract: '0x2CC440b721d2CaFd6D64908D6d8C4aCC57F8Afc3'
+  highlights:
+  - Initial Mint & Redeem contract and RFQ minting API for USDe.

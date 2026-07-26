@@ -1,8 +1,13 @@
 aid: ethena-labs
 name: Ethena Labs
-description: 'Ethena Labs is a company surfaced as a portfolio company of ribbit-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Ethena Labs is the crypto-native protocol behind USDe, a synthetic dollar backed
+  by spot crypto assets, onchain custody, and delta-neutral hedging positions on centralized
+  liquidity venues, alongside the staked savings instrument sUSDe (the "Internet Bond"), the
+  governance token ENA, and USDtb. Ethena exposes a public Minting API for whitelisted institutional
+  participants to mint and redeem USDe: a request-for-quote (RFQ) flow returns firm 15-minute
+  quotes that are signed with EIP-712 (or EIP-1271 for smart-contract wallets) and submitted onchain.
+  This profile was surfaced as a portfolio company of Ribbit Capital and enriched with the real
+  developer surface documented at docs.ethena.fi.'
 url: https://raw.githubusercontent.com/api-evangelist/ethena-labs/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +15,59 @@ x-backed-by:
 - ribbit-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://ethena.fi/shared/ethena-logo.svg
 tags:
 - Company
 - Crypto
-apis: []
+- Stablecoin
+- DeFi
+- Synthetic Dollar
+- Minting
+- Blockchain
+- Ethereum
+apis:
+- name: Ethena Minting API
+  description: 'Public request-for-quote (RFQ) minting and redemption API for USDe. Whitelisted
+    participants check asset availability, request a firm 15-minute quote, fetch the fee schedule,
+    sign the order with EIP-712 / EIP-1271, submit it onchain, and poll for order confirmation.
+    Access is gated by IP whitelisting and onchain wallet-address whitelisting.'
+  humanURL: https://docs.ethena.fi/api-documentation/overview
+  baseURL: https://public.api.ethena.fi
+  tags:
+  - Minting
+  - Redemption
+  - RFQ
+  - Stablecoin
+  properties:
+  - type: Documentation
+    url: https://docs.ethena.fi/api-documentation/overview
+  - type: InteractiveDocumentation
+    url: https://public.api.ethena.fi/docs/
+  - type: Authentication
+    url: authentication/ethena-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ethena-labs-error-codes.yml
+  - type: Conventions
+    url: conventions/ethena-labs-conventions.yml
+  - type: Idempotency
+    url: conventions/ethena-labs-conventions.yml
+  - type: MCPServer
+    url: mcp/ethena-labs-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +76,56 @@ maintainers:
 common:
 - type: Website
   url: https://ethena.fi
+- type: DeveloperPortal
+  url: https://docs.ethena.fi
+- type: Documentation
+  url: https://docs.ethena.fi/api-documentation/overview
+- type: APIReference
+  url: https://public.api.ethena.fi/docs/
+- type: GettingStarted
+  url: https://docs.ethena.fi/technical-design/minting-usde
+- type: GitHubOrganization
+  url: https://github.com/ethena-labs
+- type: StatusPage
+  url: https://status.ethena.fi/
+- type: TermsOfService
+  url: https://docs.ethena.fi/resources/usde-mint-user-agreement
+- type: TrustCenter
+  url: https://docs.ethena.fi/resources/audits
+- type: Support
+  url: https://docs.ethena.fi
+- type: LLMsTxt
+  url: llms/ethena-labs-llms.txt
+- type: Packages
+  url: packages/ethena-labs-packages.yml
+- type: SDKs
+  url: packages/ethena-labs-packages.yml
+- type: Authentication
+  url: authentication/ethena-labs-authentication.yml
+- type: ErrorCatalog
+  url: errors/ethena-labs-error-codes.yml
+- type: Conventions
+  url: conventions/ethena-labs-conventions.yml
+- type: Idempotency
+  url: conventions/ethena-labs-conventions.yml
+- type: Lifecycle
+  url: lifecycle/ethena-labs-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/ethena-labs-lifecycle.yml
+- type: ChangeLog
+  url: changelog/ethena-labs-changelog.yml
+- type: Conformance
+  url: conformance/ethena-labs-conformance.yml
+- type: VulnerabilityDisclosure
+  url: security/ethena-labs-vulnerability-disclosure.yml
+- type: Security
+  url: security/ethena-labs-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/ethena-labs-domain-security.yml
+- type: MCPServer
+  url: mcp/ethena-labs-mcp.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

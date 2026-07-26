@@ -1,0 +1,127 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ethena.fi/api-documentation/overview
+format: numeric-error-code
+description: >-
+  Ethena Minting API error registry. Errors are returned as structured objects carrying a numeric
+  error code and a descriptive message, alongside an HTTP status. This is the non-payments sibling
+  of a decline-code registry; it covers RFQ/order validation, whitelisting, capacity, and execution
+  states for the mint/redeem flow. Captured verbatim from the published API documentation.
+envelope:
+  code_field: code
+  message_field: message
+error_codes:
+- code: 0
+  http_status: 400
+  message: Invalid RFQ payload. Missing required fields.
+- code: 1
+  http_status: 400
+  message: Temporarily unavailable
+- code: 2
+  http_status: 400
+  message: Collateral asset not supported.
+- code: 3
+  http_status: 400
+  message: Pair is not supported.
+- code: 4
+  http_status: 400
+  message: Side value is not supported.
+- code: 5
+  http_status: 400
+  message: Too many significant figures for size value.
+- code: 6
+  http_status: 400
+  message: Size can only include numbers.
+- code: 7
+  http_status: 400
+  message: Size must be non zero and positive.
+- code: 8
+  http_status: 400
+  message: Size must be enough to cover the incurred gas cost.
+- code: 9
+  http_status: 400
+  message: Size exceeds Ethena set capacity per block.
+- code: 10
+  http_status: 400
+  message: Wallet address not whitelisted. Please contact Ethena.
+- code: 11
+  http_status: 400
+  message: Insufficient collateral asset in wallet.
+- code: 12
+  http_status: 400
+  message: Insufficient collateral asset approval for Ethena.
+- code: 13
+  http_status: 400
+  message: Insufficient USDe balance in wallet.
+- code: 14
+  http_status: 400
+  message: Insufficient USDe approval for Ethena to transfer.
+- code: 15
+  http_status: 400
+  message: Asset currently not active
+- code: 16
+  http_status: 400
+  message: Type_ value is not supported.
+- code: 17
+  http_status: 400
+  message: Size greater than available capacity for this block.
+- code: 18
+  http_status: 400
+  message: RFQ expired.
+- code: 19
+  http_status: 400
+  message: Invalid RFQ.
+- code: 20
+  http_status: 400
+  message: Please try again. The market moved too much.
+- code: 21
+  http_status: 400
+  message: Execution request already being processed.
+- code: 22
+  http_status: 400
+  message: Already successfully executed this block.
+- code: 23
+  http_status: 400
+  message: Present time greater than order expiry.
+- code: 24
+  http_status: 400
+  message: Duplicate nonce
+- code: 25
+  http_status: 400
+  message: Benefactor not whitelisted
+- code: 26
+  http_status: 400
+  message: Beneficiary not whitelisted. User on-chain transaction required.
+- code: 27
+  http_status: 400
+  message: Incorrect USDe minter. Switch Minting API
+- code: 28
+  http_status: 429
+  message: Benefactor has reached throttle limit.
+- code: 29
+  http_status: 400
+  message: Invalid payload
+- code: 30
+  http_status: 400
+  message: Invalid address
+- code: 31
+  http_status: 400
+  message: Fees not applicable
+- code: 32
+  http_status: 400
+  message: Slippage is too high for delegate-signed order
+- code: 33
+  http_status: 400
+  message: No pricing source found for validating asset price.
+- code: 34
+  http_status: 400
+  message: Insufficient minting contract balance
+- code: 35
+  http_status: 404
+  message: Order not found. Please verify the order ID is correct.
+- code: 36
+  http_status: 202
+  message: Order submitted but transaction not yet mined.
+- code: 37
+  http_status: 409
+  message: This RFQ has already been used to execute an order.
