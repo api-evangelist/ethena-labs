@@ -2,9 +2,8 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: https://docs.ethena.fi/api-documentation/overview
-description: >-
-  Candidate MCP tool surface derived from the documented Ethena Minting API operations. Ethena does
-  not publish an official hosted/remote MCP server; this is a starting point for one, one tool per
+description: Candidate MCP tool surface derived from the documented Ethena Minting API operations. Ethena
+  does not publish an official hosted/remote MCP server; this is a starting point for one, one tool per
   documented endpoint. Not a provider claim.
 server:
   name: ethena-minting
@@ -26,3 +25,9 @@ tools:
 - name: get_order_confirmation
   description: Poll execution status of a submitted order by order_id (RFQ ID).
   source_operation: GET https://public.api.ethena.fi/order-confirmation
+deployment:
+  mode: none
+  verified: derived
+  tools: 5
+  checked: '2026-08-12'
+  source: catalog MCP census
