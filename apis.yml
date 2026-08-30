@@ -45,7 +45,7 @@ image: https://ethena.fi/shared/ethena-logo.svg
 tags:
 - Company
 - Crypto
-- Stablecoins
+- Stablecoin
 - DeFi
 - Synthetic Dollar
 - Minting
@@ -70,9 +70,9 @@ apis:
   baseURL: https://public.api.ethena.fi
   tags:
   - Minting
-  - Redemptions
+  - Redemption
   - RFQ
-  - Stablecoins
+  - Stablecoin
   tags_raw:
   - Minting
   - Redemption
