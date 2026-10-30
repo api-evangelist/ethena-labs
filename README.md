@@ -64,6 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ethena Labs is a company surfaced as a portfolio company of ribbit-capital and added to the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the enrichment pipeline.
+Ethena Labs is the crypto-native protocol behind USDe, a synthetic dollar backed by spot crypto assets, onchain custody, and delta-neutral hedging positions on centralized liquidity venues, alongside the staked savings instrument sUSDe (the "Internet Bond"), the governance token ENA, and USDtb. Ethena exposes a public Minting API for whitelisted institutional participants to mint and redeem USDe: a request-for-quote (RFQ) flow returns firm 15-minute quotes that are signed with EIP-712 (or EIP-1271 for smart-contract wallets) and submitted onchain. This profile was surfaced as a portfolio company of Ribbit Capital and enriched with the real developer surface documented at docs.ethena.fi.
 
-Backed by: ribbit-capital — https://ethena.fi
+**Areas:** Company · Cryptocurrency · Stablecoins · DeFi · Synthetic Dollar · Minting · Blockchain · Ethereum
+
+## Ethena Labs on APIs.io
+
+Everything profiled for Ethena Labs is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ethena-labs/](https://apis.io/providers/ethena-labs/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Ethena Minting API](https://apis.io/apis/ethena-labs/ethena-minting-api/) — Public request-for-quote (RFQ) minting and redemption API for USDe. Whitelisted participants check asset availability, request a firm 15-minute quote, fetch…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [ethena-minting](https://apis.io/servers/ethena-labs/ethena-minting/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ethena Labs Authentication](https://apis.io/security/ethena-labs/ethena-labs-authentication/)
+- [Ethena Labs Domain Security](https://apis.io/security/ethena-labs/ethena-labs-domain-security/)
+- [Ethena Labs Vulnerability Disclosure](https://apis.io/security/ethena-labs/ethena-labs-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://ethena.fi)
+- [Documentation](https://docs.ethena.fi/api-documentation/overview)
+- [Getting started](https://docs.ethena.fi/technical-design/minting-usde)
+- [API reference](https://public.api.ethena.fi/docs/)
+- [Support](https://docs.ethena.fi)
+- [Blog](https://ethena.fi/blog)
+- [Trust centre](https://docs.ethena.fi/resources/audits)
+- [Terms of service](https://docs.ethena.fi/resources/usde-mint-user-agreement)
+- [GitHub](https://github.com/ethena-labs)
+- [Status](https://status.ethena.fi/)
+
+## API Evangelist rating
+
+**Kin Score 34.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 64.3 |
+| Access clarity | 18.4 |
+
+**Agent readiness 8.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 31.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ethena-labs/](https://apis.io/providers/ethena-labs/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ethena Labs: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ethena-labs/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
